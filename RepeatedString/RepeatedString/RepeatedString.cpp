@@ -21,7 +21,7 @@ long long repeatedString(string s, long long n) {
 	long double totalACount = 0;
 	totalACount = (static_cast<long double>(n) / s.size()) * count;
 
-	if (static_cast<long long>(totalACount) % 2 > 0)
+	if (static_cast<long long>(totalACount * 10 ) % 10> 0)
 		totalACount += 1;
 	
 	return totalACount;
@@ -29,8 +29,7 @@ long long repeatedString(string s, long long n) {
 
 int main()
 {
-	//is answer 13?
-	//int answer = repeatedString("aababa", 50);
+	int answer = repeatedString("aba", 10);
 	//long long answer = repeatedString("kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm", 736778906400);
 	return 0;
 }
