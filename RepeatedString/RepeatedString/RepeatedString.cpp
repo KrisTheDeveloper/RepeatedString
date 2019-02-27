@@ -4,30 +4,34 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <vector>
 
 
 using namespace std;
 
 
-long repeatedString(string s, long n) {
+long long repeatedString(string s, long long n) {
 
-	string temp = "";
+	size_t count = std::count(s.begin(), s.end(), 'a');
+	if (count == s.size())
+		return n;
 
-	for (int iter = 0; iter < n; iter++)
-	{
-		temp += s;
-	}
 
-	cout << temp;
+	long double totalACount = 0;
+	totalACount = (static_cast<long double>(n) / s.size()) * count;
 
-	return 10000;
+	if (static_cast<long long>(totalACount) % 2 > 0)
+		totalACount += 1;
+	
+	return totalACount;
 }
 
 int main()
 {
-	float value = (10 / 3) * 2;
-	float value2 = static_cast<float>(10) / 3;
-	repeatedString("aba", 7);
+	//is answer 13?
+	//int answer = repeatedString("aababa", 50);
+	//long long answer = repeatedString("kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm", 736778906400);
 	return 0;
 }
 
